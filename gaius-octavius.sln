@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GO.Core.Api", "src\GO.Core.Api\GO.Core.Api.csproj", "{64324F26-47E4-4B95-8BAD-089A68CCB3DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{30E54784-D1E4-438A-B1ED-4DA885419BDB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GO.Service.Users", "src\GO.Service.Users\GO.Service.Users.csproj", "{A5F85C70-399F-46A9-9685-2E9FDF5056D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GO.Integration.TelegramBot", "src\GO.Integration.TelegramBot\GO.Integration.TelegramBot.csproj", "{9241E5FF-8238-4A2A-B565-6714F95998C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GO.HostBuilder", "src\GO.HostBuilder\GO.HostBuilder.csproj", "{5E3BEFA0-A0FA-4367-BA2E-0A2E049450DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GO.Service.Movies", "src\GO.Service.Movies\GO.Service.Movies.csproj", "{D42598AC-A22B-492F-9009-3A57FD6B8A18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GO.Integration.IMDb", "src\GO.Integration.IMDb\GO.Integration.IMDb.csproj", "{909E5F56-8875-407E-B2F5-92E019609CE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64324F26-47E4-4B95-8BAD-089A68CCB3DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64324F26-47E4-4B95-8BAD-089A68CCB3DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64324F26-47E4-4B95-8BAD-089A68CCB3DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64324F26-47E4-4B95-8BAD-089A68CCB3DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5F85C70-399F-46A9-9685-2E9FDF5056D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5F85C70-399F-46A9-9685-2E9FDF5056D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5F85C70-399F-46A9-9685-2E9FDF5056D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5F85C70-399F-46A9-9685-2E9FDF5056D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9241E5FF-8238-4A2A-B565-6714F95998C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9241E5FF-8238-4A2A-B565-6714F95998C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9241E5FF-8238-4A2A-B565-6714F95998C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9241E5FF-8238-4A2A-B565-6714F95998C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E3BEFA0-A0FA-4367-BA2E-0A2E049450DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3BEFA0-A0FA-4367-BA2E-0A2E049450DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E3BEFA0-A0FA-4367-BA2E-0A2E049450DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E3BEFA0-A0FA-4367-BA2E-0A2E049450DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D42598AC-A22B-492F-9009-3A57FD6B8A18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D42598AC-A22B-492F-9009-3A57FD6B8A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D42598AC-A22B-492F-9009-3A57FD6B8A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D42598AC-A22B-492F-9009-3A57FD6B8A18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{909E5F56-8875-407E-B2F5-92E019609CE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{909E5F56-8875-407E-B2F5-92E019609CE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{909E5F56-8875-407E-B2F5-92E019609CE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{909E5F56-8875-407E-B2F5-92E019609CE1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{64324F26-47E4-4B95-8BAD-089A68CCB3DD} = {30E54784-D1E4-438A-B1ED-4DA885419BDB}
+		{A5F85C70-399F-46A9-9685-2E9FDF5056D6} = {30E54784-D1E4-438A-B1ED-4DA885419BDB}
+		{9241E5FF-8238-4A2A-B565-6714F95998C9} = {30E54784-D1E4-438A-B1ED-4DA885419BDB}
+		{5E3BEFA0-A0FA-4367-BA2E-0A2E049450DE} = {30E54784-D1E4-438A-B1ED-4DA885419BDB}
+		{D42598AC-A22B-492F-9009-3A57FD6B8A18} = {30E54784-D1E4-438A-B1ED-4DA885419BDB}
+		{909E5F56-8875-407E-B2F5-92E019609CE1} = {30E54784-D1E4-438A-B1ED-4DA885419BDB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C45FE0D-4D17-4ED2-B696-C267FBDA68C0}
+	EndGlobalSection
+EndGlobal
