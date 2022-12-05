@@ -61,11 +61,38 @@ namespace GO.Integration.TelegramBot.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to oops... I can&apos;t handle your message.
+        /// </summary>
+        internal static string ExceptionMessage {
+            get {
+                return ResourceManager.GetString("ExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to loading....
+        /// </summary>
+        internal static string Loading {
+            get {
+                return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} (@{1}) has been registered..
         /// </summary>
         internal static string NewUser_Format {
             get {
                 return ResourceManager.GetString("NewUser_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CAACAgIAAxkBAAIxnWON0wW871-t4A8Q2HfFt0y-RUnaAALCAgACNnYgDgABCVvK9_vDHisE.
+        /// </summary>
+        internal static string StickerResponse {
+            get {
+                return ResourceManager.GetString("StickerResponse", resourceCulture);
             }
         }
     }

@@ -20,6 +20,7 @@ namespace GO.Service.Movies
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Movie>().ToTable(nameof(Movie));
             builder.Entity<UserMovie>().ToTable(nameof(UserMovie));
 
             builder.ApplyConfigurationsFromAssembly(typeof(MovieDbContext).Assembly);

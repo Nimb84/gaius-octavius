@@ -27,10 +27,12 @@ namespace GO.Integration.TelegramBot.Behaviors.Factory
             _movieBotBehavior = movieBotBehavior;
         }
 
-        public Task HandleUpdateAsync(Update model, CancellationToken cancellationToken = default) =>
-            model.IsCommand(out var command)
+        public Task HandleUpdateAsync(Update model, CancellationToken cancellationToken = default)
+        {
+            return model.IsCommand(out var command)
                 ? HandleAsCommandAsync(command, model, cancellationToken)
                 : HandleAsMessageAsync(model, cancellationToken);
+        }
 
         private async Task HandleAsCommandAsync(
             CommandType command,

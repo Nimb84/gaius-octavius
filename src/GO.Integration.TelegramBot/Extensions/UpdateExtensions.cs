@@ -48,9 +48,16 @@ namespace GO.Integration.TelegramBot.Extensions
 
         public static bool IsCommand(this Update model, out CommandType type)
         {
-            type = model.Type is UpdateType.Message or UpdateType.CallbackQuery
-                ? EnumExtensions.Parse<CommandType>(model.GetCommand().Split().First()[1..])
-                : CommandType.None;
+            type = CommandType.None;
+
+            if (model.Type is UpdateType.Message or UpdateType.CallbackQuery)
+            {
+                var command = model.GetCommand().Split().First();
+
+                type = string.IsNullOrWhiteSpace(command)
+                    ? CommandType.None
+                    : EnumExtensions.Parse<CommandType>(command[1..]);
+            }
 
             return type != CommandType.None;
         }

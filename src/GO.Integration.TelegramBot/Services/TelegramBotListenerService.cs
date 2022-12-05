@@ -2,6 +2,7 @@
 using GO.Integration.TelegramBot.Abstractions;
 using GO.Integration.TelegramBot.Behaviors.Factory;
 using GO.Integration.TelegramBot.Extensions;
+using GO.Integration.TelegramBot.Resources;
 using Microsoft.Extensions.Logging;
 using Telegram.Bot.Types;
 
@@ -26,13 +27,18 @@ namespace GO.Integration.TelegramBot.Services
 
         public async Task EchoUpdateAsync(Update model, CancellationToken cancellationToken)
         {
+            var statusMessage = await _telegramBotClientService.SendTextAsync(
+                model.GetChatId(),
+                MessageResources.Loading,
+                cancellationToken: cancellationToken);
+
             try
             {
                 await _botBehaviorFactory.HandleUpdateAsync(model, cancellationToken);
             }
             catch (GoException ex)
-            {
-                _logger.LogError(ex, ex.Title);
+            { 
+                _logger.LogWarning(ex, ex.Title);
 
                 await _telegramBotClientService.SendTextAsync(
                     model.GetChatId(),
@@ -41,7 +47,19 @@ namespace GO.Integration.TelegramBot.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogCritical(ex, ex.Message);
+
+                await _telegramBotClientService.SendTextAsync(
+                    model.GetChatId(),
+                    MessageResources.ExceptionMessage,
+                    cancellationToken: cancellationToken);
+            }
+            finally
+            {
+                await _telegramBotClientService.DeleteAsync(
+                    model.GetChatId(),
+                    statusMessage.MessageId,
+                    cancellationToken);
             }
         }
     }

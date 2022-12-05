@@ -58,7 +58,7 @@ namespace GO.Integration.TelegramBot.Logging
                 builder
                     .AppendLine()
                     .AppendLine()
-                    .Append(exception?.ToString()[.._getCurrentConfig().Length]);
+                    .Append((exception?.ToString() ?? string.Empty)[.._getCurrentConfig().Length]);
             }
 
             TelegramBotClient

@@ -41,6 +41,15 @@ namespace GO.Integration.TelegramBot.Services
                 replyMarkup: markup,
                 cancellationToken: cancellationToken);
 
+        public Task<Message> SendStickerAsync(
+            long chatId,
+            string fileId,
+            CancellationToken cancellationToken = default) =>
+            _telegramBotClient.SendStickerAsync(
+                new ChatId(chatId),
+                new InputOnlineFile(fileId),
+                cancellationToken: cancellationToken);
+
         public Task<Message> UpdateTextAsync(
             long chatId,
             int messageId,

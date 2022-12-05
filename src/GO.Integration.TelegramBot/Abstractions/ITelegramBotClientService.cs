@@ -18,6 +18,11 @@ namespace GO.Integration.TelegramBot.Abstractions
             IReplyMarkup? markup = null,
             CancellationToken cancellationToken = default);
 
+        Task<Message> SendStickerAsync(
+            long chatId,
+            string fileId,
+            CancellationToken cancellationToken = default);
+
         Task<Message> UpdateTextAsync(
             long chatId,
             int messageId,

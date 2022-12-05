@@ -100,14 +100,16 @@ namespace GO.HostBuilder.Exceptions
                 StatusCodes.Status400BadRequest => "Bad Request",
                 StatusCodes.Status404NotFound => "Not Found",
                 StatusCodes.Status403Forbidden => "Forbidden",
+                StatusCodes.Status409Conflict => "Conflict",
                 _ => "Generic error"
             };
 
         private static string GetDefaultDetails(int statusCode) => statusCode switch
         {
             StatusCodes.Status400BadRequest => "Ignored or malformed request",
-            StatusCodes.Status404NotFound => "Entity does not exists",
+            StatusCodes.Status404NotFound => "Entity does not exist",
             StatusCodes.Status403Forbidden => "Operation is forbidden",
+            StatusCodes.Status409Conflict => "Entity exists",
             _ => "Generic error"
         };
     }

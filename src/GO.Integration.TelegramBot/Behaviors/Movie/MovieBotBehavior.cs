@@ -5,6 +5,7 @@ using GO.Integration.TelegramBot.Abstractions;
 using GO.Integration.TelegramBot.Behaviors.Movie.Enums;
 using GO.Integration.TelegramBot.Behaviors.Movie.Helpers;
 using GO.Integration.TelegramBot.Extensions;
+using GO.Integration.TelegramBot.Resources;
 using GO.Service.Movies.Commands.DeleteWatchItem;
 using GO.Service.Movies.Commands.SaveAsWatched;
 using GO.Service.Movies.Commands.SaveToWatchLater;
@@ -37,6 +38,16 @@ namespace GO.Integration.TelegramBot.Behaviors.Movie
             Update model,
             CancellationToken cancellationToken = default)
         {
+            if (model.Message?.Sticker != null)
+            {
+                await _telegramBotClientService.SendStickerAsync(
+                    model.GetChatId(),
+                    MessageResources.StickerResponse,
+                    cancellationToken);
+
+                return;
+            }
+
             var query = new SearchMovieQuery(currentUser.Id, model.Message?.Text ?? string.Empty);
             var movieList = await _mediator.Send(query, cancellationToken);
 
